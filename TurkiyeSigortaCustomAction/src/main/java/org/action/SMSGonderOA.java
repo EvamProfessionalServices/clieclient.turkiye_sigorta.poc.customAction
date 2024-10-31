@@ -99,7 +99,7 @@ public class SMSGonderOA extends AbstractOutputAction {
             if (jsonObject != null && jsonObject.getString(JSON_TOKEN_NAME) != null) {
                 StringBuilder responseData = new StringBuilder();
                 LOGGER.info("SMSGonderOA : SCENARIO {}, LOG_KIMLIK_NO {}, LOG_MUSTERI_NO {}, LOG_CEVRE_SISTEM {}, GSM_NUMBER {}, MESSSAGE {}",
-                        scenarioName, kimlikNo, musteriNo, logCevreSistem,gsmNo,message);
+                        scenarioName, kimlikNo, musteriNo, logCevreSistem, gsmNo, message);
                 JSONObject smsRequest = new JSONObject()
                         .put("LogKimlikNo", kimlikNo)
                         .put("LogMusteriNo", musteriNo)
@@ -139,9 +139,7 @@ public class SMSGonderOA extends AbstractOutputAction {
                 outputActionContext.getReturnMap().put(RESPONSE_BODY, jsonObject.toString());
                 LOGGER.info("SMSGonderOA : Token Alma islemi basarısız {}", jsonObject.toString());
                 return 0;
-
             }
-
 
         } catch (Exception e) {
             LOGGER.error("SMSGonderOA : ERROR {}", e.getMessage());
